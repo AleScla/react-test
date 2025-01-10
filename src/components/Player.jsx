@@ -1,5 +1,5 @@
 import { useState } from 'react';
-export default function Player({name, symbol}){
+export default function Player({name, symbol, isActive}){
     const [editing, setEditing] = useState(false);
     const [playerName, setPlayerName] = useState(name)
     function editName(event){
@@ -9,7 +9,7 @@ export default function Player({name, symbol}){
         setEditing((isEdited)=> !isEdited);
     }
     return (
-        <li>
+        <li className={isActive ? 'active' : undefined}>
             <span className="player">
             {editing ? 
               <input type='text' required value={playerName} onChange={editName}/> 
@@ -22,6 +22,6 @@ export default function Player({name, symbol}){
               <span>Save</span> : <span>Edit</span>
             }
             </button>
-          </li>
+        </li>
     )
 }
