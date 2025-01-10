@@ -1,16 +1,6 @@
 
-const board = [
-    [null, null, null],
-    [null, null, null],
-    [null, null, null],
-];
-export default function GameBoard({ onSelectedSquare, turns }){
-    let gameBoard = board;
-    for(const turn of turns){
-        const { square, player } = turn;
-        const { row, col } = square;
-        gameBoard[row][col] = player;
-    }
+
+export default function GameBoard({ onSelectedSquare, board }){
     // commentato perchè gestire la logica interamente qui non ci permetteva di avere dei log della partita nella pagina principale.
     // const [gameBoard, setGameBoard] = useState(board)
     // function handleSelectedSquare(rowIndex, colIndex){
@@ -25,7 +15,7 @@ export default function GameBoard({ onSelectedSquare, turns }){
     // }
     return(
         <ol id="game-board">
-            {gameBoard.map((row, rowIndex)=> 
+            {board.map((row, rowIndex)=> 
                 <li key={rowIndex}>
                     <ol>
                         {row.map((singleSquare, squareIndex) => 
