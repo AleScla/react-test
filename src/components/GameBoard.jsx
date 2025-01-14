@@ -2,6 +2,7 @@
 
 export default function GameBoard({ onSelectedSquare, board }){
     // commentato perchè gestire la logica interamente qui non ci permetteva di avere dei log della partita nella pagina principale.
+    
     // const [gameBoard, setGameBoard] = useState(board)
     // function handleSelectedSquare(rowIndex, colIndex){
     //     setGameBoard((initialBoard)=>{
